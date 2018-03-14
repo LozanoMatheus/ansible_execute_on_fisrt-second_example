@@ -1,0 +1,7 @@
+---
+- name: Examples
+  hosts: my_servers
+  gather_facts: false
+  roles:
+  - only_one
+...
