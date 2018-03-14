@@ -1,0 +1,19 @@
+---
+## Execute the task only in the first server
+## Executa no primeiro host do grupo my_servers
+- name: Test on the first
+  ping:
+  when: inventory_hostname == groups['my_servers'][0]
+
+## Execute the task only in the second server
+## Executa no segundo host do grupo my_servers
+- name: Test on the second
+  ping:
+  when: inventory_hostname == groups['my_servers'][1]
+
+## Execute the task only in the first server
+## Executa no primeiro host do grupo my_servers
+- name: Test on the first
+  ping:
+  when: inventory_hostname == groups['my_servers'] | first
+...
