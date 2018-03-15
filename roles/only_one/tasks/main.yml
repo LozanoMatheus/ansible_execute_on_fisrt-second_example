@@ -16,4 +16,13 @@
 - name: Test on the first
   ping:
   when: inventory_hostname == groups['my_servers'] | first
+
+## Execute the task in the second and third servers.
+## Executa no segundo e terceiro host do grupo my_servers
+- name: Test first
+  ping:
+  when: inventory_hostname == groups['my_servers'][item]
+  with_items:
+    - 1
+    - 2
 ...
