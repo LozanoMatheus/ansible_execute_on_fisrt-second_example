@@ -19,7 +19,7 @@
 
 ## Execute the task in the second and third servers.
 ## Executa no segundo e terceiro host do grupo my_servers
-- name: Test first
+- name: List test - second and third
   ping:
   when: inventory_hostname == groups['my_servers'][item]
   with_items:
